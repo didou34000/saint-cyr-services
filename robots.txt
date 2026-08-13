@@ -1,0 +1,14 @@
+# robots.txt — Saint-Cyr Services
+# ATTENTION : le domaine ci-dessous (https://www.saint-cyr-services.fr/) est une
+# hypothèse. Il doit être confirmé avant la mise en ligne, puis repris à
+# l'identique dans : ce fichier, sitemap.xml, les balises <link rel="canonical">
+# et les balises og:image / og:url de chaque page.
+
+User-agent: *
+Allow: /
+
+# Fichiers de travail non destinés à l'indexation.
+# À supprimer du serveur plutôt qu'à masquer, si possible.
+Disallow: /photos/
+
+Sitemap: https://www.saint-cyr-services.fr/sitemap.xml

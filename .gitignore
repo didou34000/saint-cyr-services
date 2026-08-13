@@ -1,0 +1,11 @@
+# Sources photo non publiées : 13 Mo de JPEG d'origine, propriétés privées de clients,
+# inutiles au site (tout est déjà converti en WebP dans assets/img/).
+photos/
+
+# macOS
+.DS_Store
+
+# outillage local
+.claude/
+.vercel/
+node_modules/
