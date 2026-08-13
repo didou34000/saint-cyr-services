@@ -964,7 +964,6 @@ a.contact-card:hover {
   background: var(--ink-2);
   color: var(--muted-dark);
   padding-block: clamp(3rem, 2rem + 3vw, 4.5rem) 2rem;
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   font-size: .92rem;
 }
 
@@ -1070,7 +1069,9 @@ a.contact-card:hover {
 
 @media (max-width: 760px) {
   .callbar { display: flex; }
-  body { padding-bottom: 62px; }
+  /* la réserve de place pour la barre d'appel est portée par le pied de page :
+     sur le body, elle laissait une bande crème sous le vert */
+  .footer { padding-bottom: calc(1.4rem + 62px); }
   /* le hero doit finir au-dessus de la barre d'appel, pas dessous */
   .hero { padding-bottom: calc(clamp(2.5rem, 1.5rem + 4vw, 4.5rem) + 62px); }
 }

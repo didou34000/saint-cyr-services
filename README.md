@@ -91,6 +91,20 @@ cwebp -q 58 -m 6 -sharp_yuv -resize 700 0 "photos/ma-photo.jpg" -o "assets/img/m
   `palmiers-espace-commercial` et l'arrière du fourgon sur `chantier-taille-haie`. À arbitrer
   selon ce qu'est cette entreprise (ancien employeur, partenaire…).
 
+## Après chaque modification du CSS ou du JS
+
+```bash
+python3 empreinte.py
+```
+
+Le script recalcule une empreinte du contenu de `style.css` et `main.js` et l'ajoute aux liens
+des 8 pages (`style.css?v=92cf1b4a`). Tant que le fichier ne bouge pas, l'empreinte ne bouge
+pas et le navigateur garde sa version en cache. Dès qu'il change, l'URL change et le navigateur
+recharge tout seul.
+
+Sans ça, une correction de CSS peut rester invisible pendant une heure : le navigateur continue
+de servir l'ancienne feuille depuis son cache, et on croit que le bug n'est pas corrigé.
+
 ## Voir le site en local
 
 ```bash
