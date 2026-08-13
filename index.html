@@ -59,7 +59,16 @@
 <main id="contenu">
 
   <!-- ============ HERO ============ -->
-  <section class="hero hero--bande">
+  <section class="hero">
+    <div class="hero__media">
+      <img src="assets/img/hero-fourgon-jardin.webp"
+           srcset="assets/img/hero-fourgon-jardin-sm.webp 820w,
+                   assets/img/hero-fourgon-jardin.webp 1448w"
+           sizes="100vw"
+           alt="Le fourgon Saint-Cyr Services et son matériel, garés dans un jardin devant les collines"
+           fetchpriority="high" width="1448" height="1086">
+    </div>
+
     <div class="wrap hero__inner">
       <p class="hero__lieu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -69,35 +78,24 @@
       <h1 class="hero__title">Aménagement paysager,<br>parcs &amp; jardins</h1>
       <p class="hero__sous">Création et entretien, toute l’année</p>
 
-      <div class="hero__bas">
-        <p class="hero__lead">
-          Allées et graviers, taille de haies, gazon, plantation, entretien.
-          On crée le jardin, et on revient s’en occuper.
-        </p>
+      <p class="hero__lead">
+        Allées et graviers, taille de haies, gazon, plantation, entretien.
+        On crée le jardin, et on revient s’en occuper.
+      </p>
 
-        <div class="hero__actions">
-          <a class="btn btn--primary" href="tel:+33668053381">Appeler le 06 68 05 33 81</a>
-          <a class="btn btn--ghost" href="#realisations">Voir les chantiers</a>
-        </div>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="tel:+33668053381">Appeler le 06 68 05 33 81</a>
+        <a class="btn btn--ghost" href="#realisations">Voir les chantiers</a>
       </div>
-    </div>
 
-    <div class="hero__media">
-      <img src="assets/img/hero-fourgon-jardin.webp"
-           srcset="assets/img/hero-fourgon-jardin-sm.webp 820w,
-                   assets/img/hero-fourgon-jardin.webp 1448w"
-           sizes="(max-width: 1300px) calc(100vw - 2.4rem), 1240px"
-           alt="Le fourgon Saint-Cyr Services et son matériel, garés dans un jardin devant les collines"
-           fetchpriority="high" width="1448" height="1086">
+      <p class="hero__meta">
+        <span>Devis et déplacement gratuits</span>
+        <i aria-hidden="true">·</i>
+        <span>Particuliers et professionnels</span>
+        <i aria-hidden="true">·</i>
+        <span>Déchets verts évacués</span>
+      </p>
     </div>
-
-    <p class="hero__meta">
-      <span>Devis et déplacement gratuits</span>
-      <i aria-hidden="true">·</i>
-      <span>Particuliers et professionnels</span>
-      <i aria-hidden="true">·</i>
-      <span>Déchets verts évacués</span>
-    </p>
   </section>
 
   <!-- ============ BANDEAU TÉLÉPHONE (repris du fourgon) ============ -->
@@ -321,18 +319,20 @@
 
   <!-- ============ AVIS ============ -->
   <!--
-    ⚠ À VALIDER AVANT DE LAISSER EN LIGNE
-    Le texte ci-dessous a été rédigé d'après ce qui m'a été rapporté, pas recopié
-    d'un avis écrit par Thierry lui-même. Il faut soit sa formulation exacte, soit
-    son accord sur celle-ci. En France, publier un avis qui n'émane pas réellement
-    du client est une pratique commerciale trompeuse.
-    Pour ajouter un avis : dupliquer le bloc <figure class="avis__carte">.
+    Avis recopiés tels quels depuis la fiche Google « SAINT CYR SERVICES »
+    (5,0 sur 5, 4 avis). Ne rien reformuler : ce sont les mots des clients.
+    Deux des quatre avis sont des notes sans commentaire, ils ne sont donc
+    pas affichés ici. Pour en ajouter un : dupliquer le bloc <figure>.
   -->
   <section class="section" id="avis">
     <div class="wrap">
       <div class="section__head">
         <p class="eyebrow">Avis</p>
         <h2 class="h2">Ce qu’en disent les clients</h2>
+        <p class="lead">
+          <strong>5,0 sur 5</strong> sur Google, sur 4 avis. Voici ceux qui ont laissé
+          un commentaire, recopiés mot pour mot.
+        </p>
       </div>
 
       <div class="avis">
@@ -344,12 +344,30 @@
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
           </div>
-          <blockquote class="avis__texte">Je recommande grandement Saint-Cyr Services.</blockquote>
+          <blockquote class="avis__texte">Très bon travail. Je recommande</blockquote>
+          <figcaption class="avis__auteur">
+            <span class="avis__initiale" aria-hidden="true">D</span>
+            <span>
+              <span class="avis__nom">Damien Arnaud</span>
+              <span class="avis__lieu">Avis Google</span>
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure class="avis__carte">
+          <div class="avis__etoiles" role="img" aria-label="5 étoiles sur 5">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          </div>
+          <blockquote class="avis__texte">Très bon travail, agréable. Je recommande. Merci encore</blockquote>
           <figcaption class="avis__auteur">
             <span class="avis__initiale" aria-hidden="true">T</span>
             <span>
-              <span class="avis__nom">Thierry</span>
-              <span class="avis__lieu">Montferrier-sur-Lez</span>
+              <span class="avis__nom">Trésors de couture</span>
+              <span class="avis__lieu">Avis Google</span>
             </span>
           </figcaption>
         </figure>
@@ -441,7 +459,9 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
             Secteur
           </span>
-          <!-- À CONFIRMER : commune de départ + rayon exact -->
+          <!-- Confirmé par la fiche Google : Montpellier, Grabels, Castelnau-le-Lez,
+               Vendargues, Mauguio, Saint-Jean-de-Védas, Lattes, Pérols,
+               Villeneuve-lès-Maguelone -->
           <span class="contact-card__value">Montpellier et alentours</span>
           <span class="contact-card__note">Déplacement gratuit pour le devis</span>
         </div>

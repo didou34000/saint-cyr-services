@@ -384,17 +384,21 @@ p:last-child { margin-bottom: 0; }
   content: "";
   position: absolute;
   inset: 0;
-  /* voile léger : le texte est porté par son panneau, pas par l'assombrissement
-     de toute la photo. Le jardin garde sa lumière. */
+  /* Voile teinté du vert de la marque plutôt que d'un gris : la photo reste
+     chaude. Il est fort en bas à gauche, là où se pose le texte, et se dissipe
+     complètement en haut à droite pour laisser voir le ciel et les collines. */
   background:
-    linear-gradient(to right, rgba(6, 24, 12, .42) 0%, rgba(6, 24, 12, .16) 45%, rgba(6, 24, 12, 0) 75%),
-    linear-gradient(to top, rgba(6, 24, 12, .5) 0%, rgba(6, 24, 12, .12) 40%, rgba(6, 24, 12, 0) 70%, rgba(6, 24, 12, .2) 100%);
+    radial-gradient(120% 90% at 12% 100%, rgba(4, 26, 14, .92) 0%, rgba(4, 26, 14, .55) 42%, rgba(4, 26, 14, 0) 78%),
+    linear-gradient(to top, rgba(4, 26, 14, .82) 0%, rgba(4, 26, 14, .3) 34%, rgba(4, 26, 14, 0) 62%),
+    linear-gradient(to bottom, rgba(4, 26, 14, .34) 0%, rgba(4, 26, 14, 0) 26%);
 }
 
 .hero__inner { position: relative; }
 
 .hero__title {
-  font-size: var(--f-display);
+  /* volontairement un cran sous --f-display : au-delà, la troisième ligne
+     vient couvrir le marquage du fourgon */
+  font-size: clamp(2.4rem, 1.4rem + 4.2vw, 4.7rem);
   max-width: 16ch;
   margin-bottom: 1.2rem;
   /* le titre passe devant une photo chargée : on l'assoit sans noircir l'image */
@@ -406,101 +410,6 @@ p:last-child { margin-bottom: 0; }
 .hero__title em {
   font-style: normal;
   color: var(--vert-clair);
-}
-
-/* ------ Hero en bandeau : le texte d'abord, puis la photo en grand,
-   entière, sans rien par-dessus. Le fourgon se voit en entier. ----------- */
-
-.hero--bande {
-  display: block;
-  min-height: 0;
-  padding: clamp(1.6rem, 1.3rem + 1.6vw, 2.6rem) 0 clamp(2.2rem, 1.8rem + 2.5vw, 3.6rem);
-  background: linear-gradient(172deg, #ffffff 0%, var(--stone) 46%, #ecf2dd 100%);
-  color: var(--ink);
-}
-
-.hero--bande .hero__inner { position: static; }
-
-.hero--bande .hero__title {
-  font-size: clamp(2.1rem, 1.2rem + 3.2vw, 3.7rem);
-  max-width: 17ch;
-  margin-bottom: 0;
-  text-shadow: none;
-}
-
-.hero--bande .hero__sous {
-  margin: .85rem 0 0;
-  font-size: clamp(1.05rem, .96rem + .4vw, 1.3rem);
-  font-weight: 750;
-  color: var(--vert-deep);
-}
-
-/* le texte et les boutons se répartissent sur la largeur */
-.hero--bande .hero__bas {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 1.4rem 2.5rem;
-  margin-top: clamp(1.4rem, 1rem + 1.5vw, 2.2rem);
-}
-
-.hero--bande .hero__lead {
-  margin: 0;
-  max-width: 44ch;
-  color: var(--muted);
-  text-shadow: none;
-}
-
-.hero--bande .hero__actions { margin: 0; }
-
-.hero--bande .btn--ghost {
-  color: var(--ink);
-  border-color: rgba(16, 36, 26, .3);
-}
-.hero--bande .btn--ghost:hover {
-  border-color: var(--ink);
-  background: rgba(16, 36, 26, .06);
-}
-
-/* la photo : pleine largeur du site, coins arrondis, rien dessus */
-.hero--bande .hero__media {
-  position: relative;
-  inset: auto;
-  width: min(100% - 2.4rem, 1240px);
-  margin: clamp(1.4rem, 1.1rem + 1.6vw, 2.2rem) auto 0;
-  aspect-ratio: 2.2 / 1;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: 0 30px 60px -34px rgba(6, 30, 18, .5);
-}
-.hero--bande .hero__media::after { content: none; }
-
-.hero--bande .hero__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 56%;
-}
-
-.hero--bande .hero__meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: .4rem .9rem;
-  width: min(100% - 2.4rem, 1240px);
-  margin: 1.3rem auto 0;
-  font-size: .9rem;
-  color: var(--muted);
-  text-shadow: none;
-}
-.hero--bande .hero__meta i { font-style: normal; opacity: .4; }
-
-@media (max-width: 760px) {
-  .hero--bande .hero__media { aspect-ratio: 4 / 3; }
-  .hero--bande .hero__bas { display: block; }
-  .hero--bande .hero__actions { margin-top: 1.4rem; }
 }
 
 /* le repère géographique, mis en avant : c'est la première question du client */
@@ -527,19 +436,21 @@ p:last-child { margin-bottom: 0; }
   color: var(--vert-clair);
 }
 
-/* la ligne de réassurance, discrète, sous la photo */
+/* la ligne de réassurance, sous les boutons */
 .hero__meta {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: .4rem .8rem;
-  margin: 1.3rem 0 0;
-  padding-top: 1.2rem;
-  border-top: 1px solid rgba(255, 255, 255, .16);
-  font-size: .89rem;
-  color: rgba(255, 255, 255, .86);
-  text-shadow: none;
+  gap: .4rem .9rem;
+  max-width: 46rem;
+  margin: 1.6rem 0 0;
+  padding-top: 1.3rem;
+  border-top: 1px solid rgba(255, 255, 255, .2);
+  font-size: .9rem;
+  color: rgba(255, 255, 255, .85);
 }
+.hero__meta i { font-style: normal; opacity: .4; }
+
 .hero__meta i { font-style: normal; opacity: .4; }
 
 .hero__lead {

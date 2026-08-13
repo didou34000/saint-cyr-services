@@ -12,8 +12,7 @@ ne sont pas renseignées, le site est utilisable mais incomplet.
 | Où | Quoi | Fichier |
 |---|---|---|
 | Mentions légales | Forme juridique, SIRET, adresse, responsable de publication, hébergeur, assurance | `mentions-legales.html` — **19 marqueurs `[À COMPLÉTER]`**, obligatoire avant publication |
-| Contact | **Zone d'intervention exacte** (commune de départ + rayon). Actuellement « Montpellier et alentours », déduit du Pic Saint-Loup visible sur une photo — **à confirmer** | `index.html` (section Contact) + les JSON-LD des 7 pages |
-| Contact | **Jours et horaires d'appel** — la mention a été remplacée par un texte neutre en attendant | `index.html` (carte Téléphone) |
+| Contact | **Jours et horaires d'appel** — la fiche Google indique une fermeture à 19 h, le détail par jour reste à recopier | `index.html` (carte Téléphone) |
 | Partout | **Nom de domaine réel** — `saint-cyr-services.fr` est une hypothèse | les 8 `canonical`, `og:url`, `og:image`, les JSON-LD, `sitemap.xml`, `robots.txt` |
 
 Le numéro **06 68 05 33 81** a été repris du marquage du fourgon : il est utilisé partout,
@@ -129,13 +128,25 @@ Pour changer toute la palette, modifier le bloc `:root` en haut de `assets/css/s
 
 ## Les avis clients
 
-La section « Avis » de la page d'accueil contient **un avis à valider** (Thierry, Montferrier-sur-Lez).
-Il a été rédigé d'après ce qui m'a été rapporté oralement, pas recopié d'un texte écrit par le
-client lui-même. Avant de laisser le site en ligne, il faut soit sa formulation exacte, soit son
-accord explicite sur celle-ci : en France, publier un avis qui n'émane pas réellement du client
-est une pratique commerciale trompeuse (art. L121-2 du code de la consommation).
+Les avis affichés sur la page d'accueil sont **recopiés mot pour mot depuis la fiche Google
+« SAINT CYR SERVICES »** (5,0 sur 5, 4 avis) : Damien Arnaud et Trésors de couture. Les deux
+autres avis sont des notes sans commentaire, ils ne sont donc pas affichés.
 
-Pour ajouter un avis : dupliquer le bloc `<figure class="avis__carte">` dans `index.html`.
+Ne rien reformuler : ce sont les mots des clients. Pour en ajouter un, dupliquer le bloc
+`<figure class="avis__carte">` dans `index.html` et recopier le texte tel quel.
+
+La note globale n'est volontairement **pas** déclarée en `aggregateRating` dans les données
+structurées : Google interdit de baliser sur son propre site des avis collectés sur une
+plateforme tierce. Elle est affichée en texte, ce qui est autorisé.
+
+## À faire sur la fiche Google
+
+La fiche « SAINT CYR SERVICES » n'a **aucun site web renseigné** (elle affiche encore
+« Ajouter un site Web »). Dès que le nom de domaine définitif est en place, l'ajouter à la
+fiche : c'est le geste qui rapporte le plus en référencement local, et il prend deux minutes.
+
+Les horaires réels figurent sur la fiche (fermeture à 19 h). Ils n'ont pas été recopiés sur le
+site faute de connaître le détail jour par jour.
 
 ## Choix techniques
 
