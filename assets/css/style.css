@@ -298,29 +298,32 @@ p:last-child { margin-bottom: 0; }
   height: 46px;
   padding: 0;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: var(--radius-pill);
   background: transparent;
   cursor: pointer;
   align-items: center;
   justify-content: center;
 }
-.nav-toggle span,
-.nav-toggle span::before,
-.nav-toggle span::after {
+/* une classe dédiée : sinon le <span> du libellé « Menu », masqué aux
+   voyants, se retrouve lui aussi transformé en barre */
+.nav-toggle__bar,
+.nav-toggle__bar::before,
+.nav-toggle__bar::after {
   content: "";
   display: block;
   width: 20px;
   height: 2px;
+  border-radius: 2px;
   background: var(--ink);
   transition: transform .22s, opacity .22s;
 }
-.nav-toggle span { position: relative; }
-.nav-toggle span::before { position: absolute; top: -6px; }
-.nav-toggle span::after  { position: absolute; top: 6px; }
+.nav-toggle__bar { position: relative; }
+.nav-toggle__bar::before { position: absolute; top: -6px; }
+.nav-toggle__bar::after  { position: absolute; top: 6px; }
 
-.nav-toggle[aria-expanded="true"] span { background: transparent; }
-.nav-toggle[aria-expanded="true"] span::before { transform: translateY(6px) rotate(45deg); }
-.nav-toggle[aria-expanded="true"] span::after  { transform: translateY(-6px) rotate(-45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar { background: transparent; }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar::before { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar::after  { transform: translateY(-6px) rotate(-45deg); }
 
 @media (max-width: 900px) {
   .nav-toggle { display: inline-flex; }
@@ -481,6 +484,19 @@ p:last-child { margin-bottom: 0; }
 .hero__situe span { display: inline-flex; align-items: center; gap: .45rem; }
 .hero__situe svg { width: 17px; height: 17px; flex: none; }
 .hero__situe i { font-style: normal; opacity: .45; }
+
+/* En écran étroit, le texte occupe toute la largeur : le dégradé radial du bas
+   à gauche ne suffit plus, il faut un voile qui couvre toute la partie basse. */
+@media (max-width: 760px) {
+  .hero__media::after {
+    background:
+      linear-gradient(to top,
+        rgba(4, 26, 14, .94) 0%,
+        rgba(4, 26, 14, .82) 40%,
+        rgba(4, 26, 14, .5) 66%,
+        rgba(4, 26, 14, .12) 88%);
+  }
+}
 
 /* Hero réduit pour les pages intérieures */
 .hero--page {
@@ -967,6 +983,35 @@ a.contact-card:hover {
   gap: 2.4rem;
   padding-bottom: 2.4rem;
   border-bottom: 1px solid var(--line-dark);
+}
+
+/* En mobile, une seule colonne donnait un pied de page interminable et vide
+   sur la droite. Les listes passent en deux colonnes, le bloc marque garde
+   toute la largeur. */
+@media (max-width: 700px) {
+  .footer { padding-block: clamp(2rem, 1.7rem + 1.6vw, 2.6rem) 1.4rem; }
+
+  .footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.6rem 1.4rem;
+    padding-bottom: 1.6rem;
+  }
+
+  /* la marque et la liste des prestations prennent toute la largeur ;
+     « Le site » et « Appeler » se partagent la dernière rangée */
+  .footer__grid > :nth-child(1),
+  .footer__grid > :nth-child(2) { grid-column: 1 / -1; }
+
+  .footer__grid > :nth-child(2) ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .1rem 1.4rem;
+  }
+
+  .footer h3 { margin-bottom: .55rem; }
+  .footer ul { gap: 0; }
+  .footer li { line-height: 1.4; }
+  .footer ul a { padding-block: .32rem; }
 }
 
 .footer h3 {
