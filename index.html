@@ -59,26 +59,17 @@
 <main id="contenu">
 
   <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="hero__media">
-      <img src="assets/img/hero-fourgon-jardin.webp"
-           srcset="assets/img/hero-fourgon-jardin-sm.webp 820w,
-                   assets/img/hero-fourgon-jardin.webp 1448w"
-           sizes="100vw"
-           alt="Le fourgon Saint-Cyr Services et son matériel, garés dans un jardin devant les collines"
-           fetchpriority="high" width="1448" height="1086">
-    </div>
-
+  <section class="hero hero--bande">
     <div class="wrap hero__inner">
-      <div class="hero__panneau">
-        <p class="hero__lieu">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Montpellier <span>et alentours</span>
-        </p>
+      <p class="hero__lieu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Montpellier <span>et alentours</span>
+      </p>
 
-        <h1 class="hero__title">Aménagement paysager,<br>parcs &amp; jardins</h1>
-        <p class="hero__sous">Création et entretien, toute l’année</p>
+      <h1 class="hero__title">Aménagement paysager,<br>parcs &amp; jardins</h1>
+      <p class="hero__sous">Création et entretien, toute l’année</p>
 
+      <div class="hero__bas">
         <p class="hero__lead">
           Allées et graviers, taille de haies, gazon, plantation, entretien.
           On crée le jardin, et on revient s’en occuper.
@@ -88,14 +79,25 @@
           <a class="btn btn--primary" href="tel:+33668053381">Appeler le 06 68 05 33 81</a>
           <a class="btn btn--ghost" href="#realisations">Voir les chantiers</a>
         </div>
-
-        <p class="hero__meta">
-          <span>Devis et déplacement gratuits</span>
-          <i aria-hidden="true">·</i>
-          <span>Particuliers et professionnels</span>
-        </p>
       </div>
     </div>
+
+    <div class="hero__media">
+      <img src="assets/img/hero-fourgon-jardin.webp"
+           srcset="assets/img/hero-fourgon-jardin-sm.webp 820w,
+                   assets/img/hero-fourgon-jardin.webp 1448w"
+           sizes="(max-width: 1300px) calc(100vw - 2.4rem), 1240px"
+           alt="Le fourgon Saint-Cyr Services et son matériel, garés dans un jardin devant les collines"
+           fetchpriority="high" width="1448" height="1086">
+    </div>
+
+    <p class="hero__meta">
+      <span>Devis et déplacement gratuits</span>
+      <i aria-hidden="true">·</i>
+      <span>Particuliers et professionnels</span>
+      <i aria-hidden="true">·</i>
+      <span>Déchets verts évacués</span>
+    </p>
   </section>
 
   <!-- ============ BANDEAU TÉLÉPHONE (repris du fourgon) ============ -->
