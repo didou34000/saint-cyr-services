@@ -384,9 +384,11 @@ p:last-child { margin-bottom: 0; }
   content: "";
   position: absolute;
   inset: 0;
+  /* voile léger : le texte est porté par son panneau, pas par l'assombrissement
+     de toute la photo. Le jardin garde sa lumière. */
   background:
-    linear-gradient(to right, rgba(10, 16, 5, .72) 0%, rgba(10, 16, 5, .38) 40%, rgba(10, 16, 5, .04) 72%),
-    linear-gradient(to top, rgba(10, 16, 5, .86) 0%, rgba(10, 16, 5, .44) 38%, rgba(10, 16, 5, .06) 68%, rgba(10, 16, 5, .34) 100%);
+    linear-gradient(to right, rgba(6, 24, 12, .42) 0%, rgba(6, 24, 12, .16) 45%, rgba(6, 24, 12, 0) 75%),
+    linear-gradient(to top, rgba(6, 24, 12, .5) 0%, rgba(6, 24, 12, .12) 40%, rgba(6, 24, 12, 0) 70%, rgba(6, 24, 12, .2) 100%);
 }
 
 .hero__inner { position: relative; }
@@ -403,8 +405,78 @@ p:last-child { margin-bottom: 0; }
 .hero__situe { text-shadow: 0 1px 10px rgba(8, 14, 4, .55); }
 .hero__title em {
   font-style: normal;
-  color: var(--vert);
+  color: var(--vert-clair);
 }
+
+/* ------ Panneau vitré du hero ------------------------------------------- */
+
+.hero__panneau {
+  max-width: 37rem;
+  padding: clamp(1.5rem, 1.1rem + 1.8vw, 2.6rem);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, .16);
+  /* .76 est le minimum qui garde tous les textes au-dessus du seuil WCAG AA,
+     y compris quand le panneau passe devant la carrosserie blanche */
+  background: rgba(6, 30, 18, .76);
+  backdrop-filter: blur(16px) saturate(1.15);
+  -webkit-backdrop-filter: blur(16px) saturate(1.15);
+  box-shadow: 0 30px 60px -30px rgba(3, 14, 8, .7);
+}
+
+/* le repère géographique, mis en avant : c'est la première question du client */
+.hero__lieu {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  margin: 0 0 1.1rem;
+  padding: .5rem 1.05rem .5rem .85rem;
+  border-radius: var(--radius-pill);
+  background: var(--vert);
+  color: var(--ink);
+  font-size: clamp(.9rem, .85rem + .2vw, 1rem);
+  font-weight: 800;
+  letter-spacing: -.005em;
+}
+.hero__lieu svg { width: 18px; height: 18px; flex: none; }
+.hero__lieu span { font-weight: 650; opacity: .78; }
+
+.hero__sous {
+  margin: .9rem 0 0;
+  font-size: clamp(1.02rem, .95rem + .35vw, 1.2rem);
+  font-weight: 700;
+  color: var(--vert-clair);
+}
+
+.hero__panneau .hero__title {
+  font-size: clamp(2.1rem, 1.3rem + 3.1vw, 3.7rem);
+  max-width: 18ch;
+  margin-bottom: 0;
+  text-shadow: none;
+}
+
+.hero__panneau .hero__lead {
+  margin: 1.3rem 0 0;
+  color: rgba(255, 255, 255, .9);
+  text-shadow: none;
+  max-width: 46ch;
+}
+
+.hero__panneau .hero__actions { margin: 1.7rem 0 0; }
+
+/* la ligne de réassurance, discrète, sous les boutons */
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .4rem .8rem;
+  margin: 1.3rem 0 0;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(255, 255, 255, .16);
+  font-size: .89rem;
+  color: rgba(255, 255, 255, .86);
+  text-shadow: none;
+}
+.hero__meta i { font-style: normal; opacity: .4; }
 
 .hero__lead {
   font-size: var(--f-lead);
@@ -979,6 +1051,8 @@ a.contact-card:hover {
 @media (max-width: 760px) {
   .callbar { display: flex; }
   body { padding-bottom: 62px; }
+  /* le hero doit finir au-dessus de la barre d'appel, pas dessous */
+  .hero { padding-bottom: calc(clamp(2.5rem, 1.5rem + 4vw, 4.5rem) + 62px); }
 }
 
 /* --- 14. Visionneuse (lightbox) ---------------------------------------- */
