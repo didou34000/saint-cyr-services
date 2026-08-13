@@ -108,22 +108,34 @@ le vrai nom de domaine dans les `canonical`, `og:image`, `sitemap.xml` et `robot
 
 ## L'identité
 
-Elle n'a pas été inventée : elle a été **relevée sur le marquage du fourgon**, seule identité
-visuelle existante de l'entreprise.
+Elle vient des fichiers officiels de l'entreprise : `logo.png` et `favicon.png`. Les couleurs
+du site ont été relevées au compte-gouttes dessus, rien n'est inventé.
 
-| | Relevé sur l'enseigne | Variable CSS |
+| | Relevé sur le logo | Variable CSS |
 |---|---|---|
-| Vert du panneau | `#8fb133` | `--vert` |
-| Haut du panneau, swoosh | `#c3d95a` | `--vert-clair` |
-| Feuille foncée | `#3f6b1f` | `--vert-deep` |
-| Lettrage (presque noir) | `#1b2411` | `--ink` |
+| Lime de la feuille haute | `#8fbf1a` | `--vert` |
+| Lime clair | `#b4dc3c` | `--vert-clair` |
+| Vert forêt de la feuille basse | `#084020` | `--vert-deep` |
+| Fond du favicon (sections sombres) | `#06301d` | `--ink-2` |
+| Texte | `#10241a` | `--ink` |
 
-Le logo (`assets/logo.svg`) reprend le motif du fourgon : deux feuilles et la tige qui les
-souligne. Le bandeau téléphone de la page d'accueil reprend le même dégradé que le panneau,
-avec le numéro en gros — comme sur le flanc du camion.
+Fichiers générés à partir des originaux (qui restent dans `photos/`) :
 
-Pour changer toute la palette, il suffit de modifier le bloc `:root` en haut de
-`assets/css/style.css`.
+- `assets/logo-mark.webp` — la marque seule (le « S » feuille), utilisée dans l'en-tête et le pied de page
+- `assets/logo.webp` — le lockup complet avec le texte, disponible pour les documents et impressions
+- `assets/favicon-32.png`, `favicon-180.png` (icône iOS), `favicon-512.png`
+
+Pour changer toute la palette, modifier le bloc `:root` en haut de `assets/css/style.css`.
+
+## Les avis clients
+
+La section « Avis » de la page d'accueil contient **un avis à valider** (Thierry, Montferrier-sur-Lez).
+Il a été rédigé d'après ce qui m'a été rapporté oralement, pas recopié d'un texte écrit par le
+client lui-même. Avant de laisser le site en ligne, il faut soit sa formulation exacte, soit son
+accord explicite sur celle-ci : en France, publier un avis qui n'émane pas réellement du client
+est une pratique commerciale trompeuse (art. L121-2 du code de la consommation).
+
+Pour ajouter un avis : dupliquer le bloc `<figure class="avis__carte">` dans `index.html`.
 
 ## Choix techniques
 

@@ -6,7 +6,7 @@
 <title>Saint-Cyr Services — Aménagement paysager, parcs &amp; jardins</title>
 <meta name="description" content="Aménagement paysager à Montpellier : allées et graviers, taille de haies, gazon, plantation, entretien de jardin. Devis gratuit au 06 68 05 33 81.">
 <link rel="canonical" href="https://www.saint-cyr-services.fr/">
-<meta name="theme-color" content="#22300f">
+<meta name="theme-color" content="#06301d">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.saint-cyr-services.fr/">
@@ -15,7 +15,9 @@
 <meta property="og:image" content="https://www.saint-cyr-services.fr/assets/img/allee-beton-desactive.webp">
 <meta property="og:locale" content="fr_FR">
 
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/favicon-512.png" sizes="512x512" type="image/png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -25,11 +27,7 @@
 <header class="site-header">
   <div class="wrap site-header__inner">
     <a class="brand" href="index.html" aria-label="Saint-Cyr Services, accueil">
-      <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true">
-        <path d="M3 44c14-1 24-7 31-17-1 11-12 18-31 20z" fill="#c3d95a"/>
-        <path d="M22 33c-3-11 2-21 12-27 4 12-1 22-12 27z" fill="#8fb133"/>
-        <path d="M26 29c5-10 14-15 22-16-2 11-10 17-22 16z" fill="#3f6b1f"/>
-      </svg>
+      <img class="brand__mark" src="assets/logo-mark.webp" alt="" width="240" height="287">
       <span>
         <span class="brand__name">Saint-Cyr Services</span>
         <span class="brand__tag">Aménagement paysager</span>
@@ -44,6 +42,7 @@
     <nav class="nav" id="nav-principal" aria-label="Navigation principale">
       <a href="#prestations">Ce qu’on fait</a>
       <a href="#realisations">Réalisations</a>
+      <a href="#avis">Avis</a>
       <a href="#contact">Contact</a>
       <a class="btn btn--primary" href="tel:+33668053381">06 68 05 33 81</a>
     </nav>
@@ -62,12 +61,12 @@
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="hero__media">
-      <img src="assets/img/camion-saint-cyr-services.webp"
-           srcset="assets/img/camion-saint-cyr-services-sm.webp 700w,
-                   assets/img/camion-saint-cyr-services.webp 1500w"
+      <img src="assets/img/hero-fourgon-jardin.webp"
+           srcset="assets/img/hero-fourgon-jardin-sm.webp 820w,
+                   assets/img/hero-fourgon-jardin.webp 1448w"
            sizes="100vw"
-           alt="Le fourgon Saint-Cyr Services, portes ouvertes, avec le matériel de taille posé au sol"
-           fetchpriority="high" width="1500" height="1125">
+           alt="Le fourgon Saint-Cyr Services et son matériel, garés dans un jardin devant les collines"
+           fetchpriority="high" width="1448" height="1086">
     </div>
 
     <div class="wrap hero__inner">
@@ -286,6 +285,73 @@
     </div>
   </section>
 
+  <!-- ============ LE MATÉRIEL ============ -->
+  <section class="materiel" id="materiel">
+    <div class="wrap materiel__inner">
+      <div>
+        <p class="eyebrow">Le matériel</p>
+        <h2 class="h2">On arrive avec tout</h2>
+        <p class="lead">
+          Le fourgon est équipé pour la journée. Vous n’avez rien à sortir, rien à louer,
+          rien à emmener à la déchetterie.
+        </p>
+        <ul class="ticks">
+          <li>Perches de taille pour les haies hautes, sans échafaudage</li>
+          <li>Débroussailleuses pour les talus et les friches</li>
+          <li>Souffleur en fin de chantier&nbsp;: allées et terrasses rendues propres</li>
+          <li>Remorque pour emporter les déchets verts</li>
+        </ul>
+      </div>
+
+      <div class="materiel__media">
+        <img src="assets/img/fourgon-detoure.webp"
+             srcset="assets/img/fourgon-detoure-sm.webp 800w,
+                     assets/img/fourgon-detoure.webp 1400w"
+             sizes="(max-width: 860px) 92vw, 55vw"
+             alt="Le fourgon portes ouvertes, avec la tronçonneuse, le souffleur, les débroussailleuses et les perches de taille posés devant"
+             loading="lazy" width="1400" height="934">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AVIS ============ -->
+  <!--
+    ⚠ À VALIDER AVANT DE LAISSER EN LIGNE
+    Le texte ci-dessous a été rédigé d'après ce qui m'a été rapporté, pas recopié
+    d'un avis écrit par Thierry lui-même. Il faut soit sa formulation exacte, soit
+    son accord sur celle-ci. En France, publier un avis qui n'émane pas réellement
+    du client est une pratique commerciale trompeuse.
+    Pour ajouter un avis : dupliquer le bloc <figure class="avis__carte">.
+  -->
+  <section class="section" id="avis">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Avis</p>
+        <h2 class="h2">Ce qu’en disent les clients</h2>
+      </div>
+
+      <div class="avis">
+        <figure class="avis__carte">
+          <div class="avis__etoiles" role="img" aria-label="5 étoiles sur 5">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          </div>
+          <blockquote class="avis__texte">Je recommande grandement Saint-Cyr Services.</blockquote>
+          <figcaption class="avis__auteur">
+            <span class="avis__initiale" aria-hidden="true">T</span>
+            <span>
+              <span class="avis__nom">Thierry</span>
+              <span class="avis__lieu">Montferrier-sur-Lez</span>
+            </span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ COULISSES ============ -->
   <section class="section section--dark" id="coulisses">
     <div class="wrap">
@@ -385,11 +451,7 @@
     <div class="footer__grid">
       <div>
         <a class="brand" href="index.html">
-          <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true">
-            <path d="M3 44c14-1 24-7 31-17-1 11-12 18-31 20z" fill="#c3d95a"/>
-            <path d="M22 33c-3-11 2-21 12-27 4 12-1 22-12 27z" fill="#8fb133"/>
-            <path d="M26 29c5-10 14-15 22-16-2 11-10 17-22 16z" fill="#5f9127"/>
-          </svg>
+          <img class="brand__mark" src="assets/logo-mark.webp" alt="" width="240" height="287">
           <span>
             <span class="brand__name">Saint-Cyr Services</span>
             <span class="brand__tag">Parcs &amp; jardins</span>

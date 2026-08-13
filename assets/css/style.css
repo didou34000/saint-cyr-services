@@ -2,28 +2,28 @@
    Saint-Cyr Services — feuille de style unique
 
    Les couleurs ne sont pas inventées : elles sont relevées au compte-gouttes
-   sur le marquage du fourgon (le vert lime du panneau, le vert des deux
-   feuilles, le presque-noir du lettrage).
+   sur le logo officiel (le lime des deux feuilles, le vert forêt du « S »)
+   et sur le fond du favicon.
    ========================================================================== */
 
 /* --- 1. Réglages de base ------------------------------------------------ */
 
 :root {
-  /* couleurs relevées sur l'enseigne */
-  --ink:        #1b2411;  /* le lettrage du fourgon */
-  --ink-2:      #22300f;  /* fonds sombres */
-  --ink-3:      #33441c;
+  /* couleurs relevées sur le logo */
+  --ink:        #10241a;  /* texte */
+  --ink-2:      #06301d;  /* fonds sombres — le fond du favicon */
+  --ink-3:      #14432a;
   --stone:      #f7f5ee;  /* crème */
   --stone-2:    #ece8da;
   --white:      #ffffff;
-  --vert:       #8fb133;  /* le vert du panneau */
-  --vert-2:     #7a9a26;
-  --vert-clair: #c3d95a;  /* le haut du panneau, le swoosh */
-  --vert-deep:  #3f6b1f;  /* la feuille foncée */
-  --line:       rgba(27, 36, 17, .16);
+  --vert:       #8fbf1a;  /* le lime de la feuille haute */
+  --vert-2:     #77a013;
+  --vert-clair: #b4dc3c;
+  --vert-deep:  #084020;  /* le vert forêt de la feuille basse */
+  --line:       rgba(16, 36, 26, .16);
   --line-dark:  rgba(255, 255, 255, .18);
-  --muted:      #5f6851;
-  --muted-dark: #aab59a;
+  --muted:      #5a6a5c;
+  --muted-dark: #9db3a2;
 
   /* typographie fluide */
   --f-display: clamp(2.6rem, 1.4rem + 5.2vw, 5.6rem);
@@ -34,10 +34,17 @@
   /* rythme */
   --gap:       clamp(1.2rem, .8rem + 1.4vw, 2rem);
   --section-y: clamp(4rem, 2.5rem + 6vw, 8.5rem);
-  --radius:    3px;
 
-  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto,
-          "Helvetica Neue", Arial, sans-serif;
+  /* arrondis : rien d'anguleux sur ce site */
+  --radius:      16px;
+  --radius-sm:   10px;
+  --radius-lg:   30px;
+  --radius-pill: 999px;
+
+  /* ui-rounded = SF Pro Rounded sur iPhone et Mac, où sont la plupart des
+     visiteurs. Ailleurs, on retombe proprement sur la pile habituelle. */
+  --sans: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 *,
@@ -115,16 +122,24 @@ p:last-child { margin-bottom: 0; }
 
 /* --- 2. Éléments de texte partagés -------------------------------------- */
 
+/* pastille arrondie plutôt qu'un simple libellé */
 .eyebrow {
-  margin: 0 0 .9rem;
-  font-size: .78rem;
+  display: inline-block;
+  margin: 0 0 1rem;
+  padding: .4rem .9rem;
+  border-radius: var(--radius-pill);
+  background: rgba(143, 191, 26, .16);
+  font-size: .74rem;
   font-weight: 800;
-  letter-spacing: .14em;
+  letter-spacing: .13em;
   text-transform: uppercase;
   color: var(--vert-deep);
 }
 .section--dark .eyebrow,
-.hero .eyebrow { color: var(--vert-clair); }
+.hero .eyebrow {
+  color: var(--vert-clair);
+  background: rgba(180, 220, 60, .16);
+}
 
 .h2 { font-size: var(--f-h2); }
 
@@ -158,9 +173,9 @@ p:last-child { margin-bottom: 0; }
   align-items: center;
   justify-content: center;
   gap: .6rem;
-  padding: .95rem 1.6rem;
+  padding: .95rem 1.8rem;
   border: 2px solid transparent;
-  border-radius: var(--radius);
+  border-radius: var(--radius-pill);
   font: inherit;
   font-weight: 750;
   font-size: .95rem;
@@ -228,13 +243,13 @@ p:last-child { margin-bottom: 0; }
   margin-right: auto;
 }
 
+/* la marque officielle est plus haute que large : on cale sur la hauteur */
 .brand__mark {
-  width: 40px;
-  height: 40px;
+  width: auto;
+  height: 42px;
   flex: none;
 }
 
-/* le lettrage du fourgon est condensé, gras, très serré : on s'en approche */
 .brand__name {
   display: block;
   font-size: 1.12rem;
@@ -360,9 +375,7 @@ p:last-child { margin-bottom: 0; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 62%;
-  /* la photo est prise un jour gris : on lui rend un peu de vie */
-  filter: saturate(1.14) contrast(1.06) brightness(1.06);
+  object-position: center 58%;
 }
 
 /* deux voiles : un vertical pour asseoir le texte, un horizontal pour qu'il ne
@@ -372,8 +385,8 @@ p:last-child { margin-bottom: 0; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to right, rgba(12, 18, 6, .68) 0%, rgba(12, 18, 6, .3) 42%, rgba(12, 18, 6, 0) 68%),
-    linear-gradient(to top, rgba(12, 18, 6, .88) 0%, rgba(12, 18, 6, .45) 40%, rgba(12, 18, 6, .05) 66%, rgba(12, 18, 6, .35) 100%);
+    linear-gradient(to right, rgba(10, 16, 5, .72) 0%, rgba(10, 16, 5, .38) 40%, rgba(10, 16, 5, .04) 72%),
+    linear-gradient(to top, rgba(10, 16, 5, .86) 0%, rgba(10, 16, 5, .44) 38%, rgba(10, 16, 5, .06) 68%, rgba(10, 16, 5, .34) 100%);
 }
 
 .hero__inner { position: relative; }
@@ -382,7 +395,12 @@ p:last-child { margin-bottom: 0; }
   font-size: var(--f-display);
   max-width: 16ch;
   margin-bottom: 1.2rem;
+  /* le titre passe devant une photo chargée : on l'assoit sans noircir l'image */
+  text-shadow: 0 2px 18px rgba(8, 14, 4, .5), 0 1px 3px rgba(8, 14, 4, .45);
 }
+
+.hero__lead,
+.hero__situe { text-shadow: 0 1px 10px rgba(8, 14, 4, .55); }
 .hero__title em {
   font-style: normal;
   color: var(--vert);
@@ -637,9 +655,12 @@ p:last-child { margin-bottom: 0; }
 /* Le bandeau téléphone : repris tel quel du flanc du fourgon.
    Même dégradé, même numéro en gros, même logique — on appelle, c'est tout. */
 .phone-band {
+  width: min(100% - 2.4rem, 1240px);
+  margin: clamp(2rem, 1rem + 3vw, 3.5rem) auto;
+  border-radius: var(--radius-lg);
   background: linear-gradient(105deg, var(--vert-clair) 0%, var(--vert) 68%, var(--vert-2) 100%);
   color: var(--ink);
-  padding-block: clamp(2.6rem, 1.8rem + 3vw, 4rem);
+  padding-block: clamp(2.4rem, 1.6rem + 3vw, 3.6rem);
   text-align: center;
 }
 
@@ -660,7 +681,7 @@ p:last-child { margin-bottom: 0; }
   line-height: 1;
   text-decoration: none;
   color: var(--ink);
-  border-bottom: 4px solid rgba(27, 36, 17, .25);
+  border-bottom: 4px solid rgba(16, 36, 26, .25);
   padding-bottom: .1em;
   transition: border-color .2s;
 }
@@ -756,15 +777,142 @@ a.contact-card:hover {
   margin-top: .4rem;
 }
 
+/* --- 10 bis. Le matériel (fourgon détouré sur fond vert doux) ------------ */
+
+.materiel {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(3rem, 2rem + 4vw, 5.5rem);
+  background: linear-gradient(168deg, #fbfaf4 0%, #eff5da 34%, #cfe486 100%);
+}
+
+/* halo diffus, pour que le véhicule ne flotte pas dans le vide */
+.materiel::before {
+  content: "";
+  position: absolute;
+  right: -10%;
+  top: 2%;
+  width: 66%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(143, 191, 26, .34) 0%, rgba(143, 191, 26, 0) 66%);
+  pointer-events: none;
+}
+
+.materiel__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  align-items: center;
+  gap: clamp(1.6rem, 1rem + 2.6vw, 3rem);
+}
+
+.materiel__media img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 30px 26px rgba(16, 36, 26, .26));
+}
+
+@media (max-width: 860px) {
+  .materiel__inner { grid-template-columns: 1fr; }
+  .materiel::before { right: -30%; top: auto; bottom: -10%; width: 120%; }
+}
+
+/* --- 11 bis. Avis clients ----------------------------------------------- */
+
+.avis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--gap);
+}
+
+.avis__carte {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 1.1rem + 1.4vw, 2.2rem);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+.avis__etoiles {
+  display: flex;
+  gap: .18rem;
+  margin-bottom: 1rem;
+  color: #e2a02c;
+}
+.avis__etoiles svg { width: 19px; height: 19px; }
+
+.avis__texte {
+  font-size: 1.08rem;
+  line-height: 1.55;
+  margin: 0 0 1.4rem;
+}
+.avis__texte::before { content: "« "; }
+.avis__texte::after  { content: " »"; }
+
+.avis__auteur {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-top: auto;
+}
+
+.avis__initiale {
+  width: 46px;
+  height: 46px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--vert-clair);
+  color: var(--ink);
+  font-weight: 850;
+  font-size: 1.05rem;
+}
+
+.avis__nom {
+  display: block;
+  font-weight: 800;
+  letter-spacing: -.01em;
+}
+
+.avis__lieu {
+  display: block;
+  font-size: .88rem;
+  color: var(--muted);
+}
+
+/* emplacement libre, en attendant les avis suivants */
+.avis__vide {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: clamp(1.5rem, 1.1rem + 1.4vw, 2.2rem);
+  border: 2px dashed var(--line);
+  border-radius: var(--radius-lg);
+  color: var(--muted);
+  font-size: .95rem;
+}
+
 /* --- 12. Pied de page --------------------------------------------------- */
 
 .footer {
-  background: var(--ink);
+  background: var(--ink-2);
   color: var(--muted-dark);
   padding-block: clamp(3rem, 2rem + 3vw, 4.5rem) 2rem;
-  border-top: 1px solid var(--line-dark);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   font-size: .92rem;
 }
+
+.footer ul a {
+  display: inline-block;
+  padding: .2rem .7rem;
+  margin-left: -.7rem;
+  border-radius: var(--radius-pill);
+  transition: background-color .18s, color .18s;
+}
+.footer ul a:hover { background: rgba(180, 220, 60, .16); }
 
 .footer__grid {
   display: grid;
