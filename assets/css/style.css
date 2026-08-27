@@ -1182,3 +1182,81 @@ a.contact-card:hover {
   }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* --- 16. Crédit d'impôt ------------------------------------------------- */
+
+/* les deux pastilles du hero : le lieu, et l'avantage fiscal */
+.hero__pastilles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin: 0 0 1.1rem;
+}
+
+.hero__lieu { margin: 0; }
+
+.hero__fiscal {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .4rem;
+  padding: .5rem 1.05rem;
+  border-radius: var(--radius-pill);
+  background: var(--stone);
+  color: var(--vert-deep);
+  font-size: clamp(.9rem, .85rem + .2vw, 1rem);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color .18s, transform .18s;
+}
+.hero__fiscal:hover { background: var(--white); transform: translateY(-1px); }
+.hero__fiscal b { font-weight: 850; letter-spacing: -.02em; }
+.hero__fiscal span { font-weight: 600; opacity: .72; }
+
+/* la pastille posée sur la carte « Entretien de jardin » */
+.service__fiscal {
+  display: inline-block;
+  margin: 0 0 .6rem;
+  padding: .28rem .7rem;
+  border-radius: var(--radius-pill);
+  background: rgba(143, 191, 26, .18);
+  color: var(--vert-deep);
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.fiscal { background: var(--stone-2); }
+
+.fiscal__inner {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(1.5rem, 1rem + 3vw, 3.5rem);
+}
+
+/* le « 50 % », traité comme un chiffre d'affiche */
+.fiscal__chiffre {
+  display: flex;
+  align-items: flex-start;
+  margin: 0;
+  font-size: clamp(4.5rem, 2.5rem + 9vw, 11rem);
+  font-weight: 850;
+  line-height: .82;
+  letter-spacing: -.055em;
+  color: var(--vert-deep);
+}
+.fiscal__chiffre span {
+  font-size: .42em;
+  line-height: 1;
+  margin-left: .06em;
+  color: var(--vert);
+}
+
+.fiscal .ticks { margin-top: 1.4rem; }
+
+.fiscal .note { margin-top: 1.6rem; }
+
+@media (max-width: 720px) {
+  .fiscal__inner { grid-template-columns: 1fr; gap: .8rem; }
+  .fiscal__chiffre { font-size: clamp(4rem, 2rem + 14vw, 6rem); }
+}

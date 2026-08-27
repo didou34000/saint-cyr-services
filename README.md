@@ -19,6 +19,34 @@ Le numéro **06 68 05 33 81** a été repris du marquage du fourgon : il est uti
 en lien cliquable (`tel:`) et en lien WhatsApp (`wa.me/33668053381`). C'est la seule
 coordonnée affirmée par le site — aucune adresse, aucun e-mail, aucun SIRET n'a été inventé.
 
+## ⚠ Crédit d'impôt : une condition à vérifier avant la mise en ligne
+
+Le site annonce **50 % de crédit d'impôt sur l'entretien** — en pastille dans le hero, en
+section dédiée sur l'accueil, et sur la page « Entretien de jardin ».
+
+**Cet avantage n'existe que si l'entreprise est déclarée « services à la personne ».** La
+déclaration se fait sur [nova.entreprises.gouv.fr](https://nova.entreprises.gouv.fr), elle est
+gratuite et donne un numéro de déclaration SAP. Sans elle, les clients n'ont droit à rien et
+l'afficher relève de la publicité trompeuse.
+
+Une fois le numéro obtenu, le renseigner aux deux emplacements marqués
+`<!-- À COMPLÉTER : numéro de déclaration « services à la personne » (SAP) -->`.
+
+Ce qui est écrit sur le site, et qui est exact sous cette condition :
+
+- 50 % des dépenses, en **crédit** d'impôt (donc versé même si le client n'est pas imposable)
+- plafond spécifique aux petits travaux de jardinage : **5 000 € de dépenses par an et par
+  foyer fiscal**, soit 2 500 € rendus
+- base légale : article 199 sexdecies du CGI
+- **seul l'entretien courant** y ouvre droit (tonte, taille de haies, débroussaillage,
+  désherbage, ramassage de feuilles). La création — allées, plantation, terrasses — non.
+  C'est pour ça que la mention n'apparaît que sur l'accueil et la page entretien, et sur
+  aucune des cinq autres pages prestations.
+
+Non mentionnée sur le site car elle demande une inscription séparée : l'**avance immédiate**
+de l'URSSAF, qui permet au client de ne payer que 50 % sur le moment au lieu d'attendre la
+déclaration. À ajouter si l'entreprise y adhère.
+
 ## Affirmations commerciales à faire valider
 
 Le site s'engage sur quelques promesses courantes du métier. Elles sont plausibles mais
