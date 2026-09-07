@@ -6,12 +6,12 @@ et s'héberge n'importe où.
 
 ## Ce qu'il faut compléter avant la mise en ligne
 
-Ces informations n'étaient pas connues au moment de la construction du site. Tant qu'elles
-ne sont pas renseignées, le site est utilisable mais incomplet.
+Les informations déjà transmises par l'entreprise ont été intégrées. Tant que les éléments
+restants ne sont pas confirmés, le site est utilisable mais incomplet juridiquement.
 
 | Où | Quoi | Fichier |
 |---|---|---|
-| Mentions légales | Forme juridique, SIRET, adresse, responsable de publication, hébergeur, assurance | `mentions-legales.html` — **19 marqueurs `[À COMPLÉTER]`**, obligatoire avant publication |
+| Mentions légales | Immatriculation complémentaire, TVA, assurance, hébergeur, conservation des données, médiateur | `mentions-legales.html` — **12 confirmations restantes**, obligatoires avant publication définitive |
 | Contact | **Jours et horaires d'appel** — la fiche Google indique une fermeture à 19 h, le détail par jour reste à recopier | `index.html` (carte Téléphone) |
 | Partout | **Nom de domaine réel** — `saint-cyr-services.fr` est une hypothèse | les 8 `canonical`, `og:url`, `og:image`, les JSON-LD, `sitemap.xml`, `robots.txt` |
 
