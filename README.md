@@ -11,7 +11,7 @@ restants ne sont pas confirmés, le site est utilisable mais incomplet juridique
 
 | Où | Quoi | Fichier |
 |---|---|---|
-| Mentions légales | Immatriculation complémentaire, TVA, assurance, hébergeur, conservation des données, médiateur | `mentions-legales.html` — **12 confirmations restantes**, obligatoires avant publication définitive |
+| Mentions légales | Immatriculation complémentaire, assurance et hébergeur | `mentions-legales.html` — **8 confirmations restantes**, obligatoires avant publication définitive |
 | Contact | **Jours et horaires d'appel** — la fiche Google indique une fermeture à 19 h, le détail par jour reste à recopier | `index.html` (carte Téléphone) |
 | Partout | **Nom de domaine réel** — `saint-cyr-services.fr` est une hypothèse | les 8 `canonical`, `og:url`, `og:image`, les JSON-LD, `sitemap.xml`, `robots.txt` |
 
@@ -25,8 +25,9 @@ Le site annonce **50 % de crédit d'impôt sur l'entretien** — en pastille dan
 section dédiée sur l'accueil, et sur la page « Entretien de jardin ».
 
 Le client indique que le dispositif est porté dans le cadre d'une coopération avec
-**ACCÈS SAP**, en mode prestataire. Le site le précise sur l'accueil et la page
-« Entretien de jardin ». La création n'est pas présentée comme éligible.
+**ACCÈS SAP**, en mode prestataire. ACCÈS SAP communique la déclaration
+**SAP532923984**. Le site le précise sur l'accueil et la page « Entretien de jardin ».
+La création n'est pas présentée comme éligible.
 
 Le statut, le périmètre des prestations couvertes et la formulation commerciale doivent
 rester conformes aux documents fournis par ACCÈS SAP.
