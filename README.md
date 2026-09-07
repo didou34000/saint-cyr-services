@@ -19,18 +19,17 @@ Le numéro **06 68 05 33 81** a été repris du marquage du fourgon : il est uti
 en lien cliquable (`tel:`) et en lien WhatsApp (`wa.me/33668053381`). C'est la seule
 coordonnée affirmée par le site — aucune adresse, aucun e-mail, aucun SIRET n'a été inventé.
 
-## ⚠ Crédit d'impôt : une condition à vérifier avant la mise en ligne
+## Crédit d'impôt et coopération ACCÈS SAP
 
 Le site annonce **50 % de crédit d'impôt sur l'entretien** — en pastille dans le hero, en
 section dédiée sur l'accueil, et sur la page « Entretien de jardin ».
 
-**Cet avantage n'existe que si l'entreprise est déclarée « services à la personne ».** La
-déclaration se fait sur [nova.entreprises.gouv.fr](https://nova.entreprises.gouv.fr), elle est
-gratuite et donne un numéro de déclaration SAP. Sans elle, les clients n'ont droit à rien et
-l'afficher relève de la publicité trompeuse.
+Le client indique que le dispositif est porté dans le cadre d'une coopération avec
+**ACCÈS SAP**, en mode prestataire. Le site le précise sur l'accueil et la page
+« Entretien de jardin ». La création n'est pas présentée comme éligible.
 
-Une fois le numéro obtenu, le renseigner aux deux emplacements marqués
-`<!-- À COMPLÉTER : numéro de déclaration « services à la personne » (SAP) -->`.
+Le statut, le périmètre des prestations couvertes et la formulation commerciale doivent
+rester conformes aux documents fournis par ACCÈS SAP.
 
 Ce qui est écrit sur le site, et qui est exact sous cette condition :
 
