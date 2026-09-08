@@ -11,7 +11,7 @@ restants ne sont pas confirmés, le site est utilisable mais incomplet juridique
 
 | Où | Quoi | Fichier |
 |---|---|---|
-| Mentions légales | Immatriculation complémentaire, assurance et hébergeur | `mentions-legales.html` — **8 confirmations restantes**, obligatoires avant publication définitive |
+| Mentions légales | Immatriculation complémentaire et assurance | `mentions-legales.html` — **4 confirmations restantes**, obligatoires avant publication définitive |
 | Contact | **Jours et horaires d'appel** — la fiche Google indique une fermeture à 19 h, le détail par jour reste à recopier | `index.html` (carte Téléphone) |
 | Partout | **Nom de domaine réel** — `saint-cyr-services.fr` est une hypothèse | les 8 `canonical`, `og:url`, `og:image`, les JSON-LD, `sitemap.xml`, `robots.txt` |
 
