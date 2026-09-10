@@ -11,7 +11,7 @@ restants ne sont pas confirmés, le site est utilisable mais incomplet juridique
 
 | Où | Quoi | Fichier |
 |---|---|---|
-| Mentions légales | Immatriculation complémentaire et assurance | `mentions-legales.html` — **4 confirmations restantes**, obligatoires avant publication définitive |
+| Mentions légales | **Médiateur de la consommation** pour les prestations hors ACCÈS SAP — le client doit y adhérer | `mentions-legales.html`, rubrique « Droit applicable et litiges » |
 | Contact | **Jours et horaires d'appel** — la fiche Google indique une fermeture à 19 h, le détail par jour reste à recopier | `index.html` (carte Téléphone) |
 | Partout | **Nom de domaine réel** — `saint-cyr-services.fr` est une hypothèse | les 8 `canonical`, `og:url`, `og:image`, les JSON-LD, `sitemap.xml`, `robots.txt` |
 
@@ -143,9 +143,13 @@ Puis ouvrir <http://localhost:5173>.
 
 ## Mettre en ligne
 
-Site 100 % statique : il suffit de déposer le dossier. Netlify, Vercel, GitHub Pages ou
-n'importe quel hébergement mutualisé par FTP font l'affaire. Ne pas oublier de renseigner
-le vrai nom de domaine dans les `canonical`, `og:image`, `sitemap.xml` et `robots.txt`.
+Hébergement sur **Netlify** (offre gratuite, usage commercial autorisé), relié au dépôt
+GitHub : chaque push sur `main` republie le site. La configuration (en-têtes de cache,
+fichiers de travail non servis) est dans `netlify.toml`. Changer d'hébergeur impose de
+mettre à jour la rubrique « Hébergement » des mentions légales.
+
+Ne pas oublier de renseigner le vrai nom de domaine dans les `canonical`, `og:image`,
+`sitemap.xml` et `robots.txt`.
 
 ## L'identité
 
