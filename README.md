@@ -143,10 +143,9 @@ Puis ouvrir <http://localhost:5173>.
 
 ## Mettre en ligne
 
-Hébergement sur **Netlify** (offre gratuite, usage commercial autorisé), relié au dépôt
-GitHub : chaque push sur `main` republie le site. La configuration (en-têtes de cache,
-fichiers de travail non servis) est dans `netlify.toml`. Changer d'hébergeur impose de
-mettre à jour la rubrique « Hébergement » des mentions légales.
+Hébergement sur **Vercel**, relié au dépôt GitHub : chaque push sur `main` republie le site.
+La configuration (URLs propres et en-têtes de cache) est dans `vercel.json`. Changer
+d'hébergeur impose de mettre à jour la rubrique « Hébergement » des mentions légales.
 
 Ne pas oublier de renseigner le vrai nom de domaine dans les `canonical`, `og:image`,
 `sitemap.xml` et `robots.txt`.
