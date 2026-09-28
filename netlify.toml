@@ -1,0 +1,39 @@
+# Site statique : aucun build, on publie le dossier tel quel.
+[build]
+  publish = "."
+
+# Fichiers de travail présents dans le dossier publié : on ne les sert pas.
+[[redirects]]
+  from = "/README.md"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/empreinte.py"
+  to = "/"
+  status = 301
+  force = true
+
+# Photos : nom de fichier stable, cache long.
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# CSS et JS : l'empreinte ?v=… dans les pages suffit, on revalide à chaque fois.
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
