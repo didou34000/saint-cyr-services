@@ -11,13 +11,15 @@ transmises par l'entreprise ont été intégrées. Les points suivants restent �
 
 | Où | Quoi | Fichier |
 |---|---|---|
-| Mentions légales | **Médiateur de la consommation** pour les prestations hors ACCÈS SAP — le client doit y adhérer | `mentions-legales.html`, rubrique « Droit applicable et litiges » |
+| Mentions légales | **Médiateur de la consommation** pour les prestations hors ACCÈS SAP — le client doit y adhérer | `mentions-legales.html`, rubrique « Médiation de la consommation » |
 | Contact | **Jours et horaires d'appel** — la fiche Google indique une fermeture à 19 h, le détail par jour reste à recopier | `index.html` (carte Téléphone) |
 | Partout | **Nom de domaine personnalisé** — enregistrer `saint-cyr-services.fr` au nom de l'entreprise, le relier à Vercel, puis remplacer les URL Vercel | les 8 `canonical`, `og:url`, `og:image`, les JSON-LD, `sitemap.xml`, `robots.txt` |
 
-Le numéro **06 68 05 33 81** a été repris du marquage du fourgon : il est utilisé partout,
-en lien cliquable (`tel:`) et en lien WhatsApp (`wa.me/33668053381`). C'est la seule
-coordonnée affirmée par le site — aucune adresse, aucun e-mail, aucun SIRET n'a été inventé.
+Le numéro **06 68 05 33 81** est utilisé partout, en lien cliquable (`tel:`) et en lien
+WhatsApp (`wa.me/33668053381`). L’adresse, l’e-mail et le SIRET ont été repris des
+informations et documents transmis par le client. La mention de franchise de TVA doit
+être revue si sa situation fiscale change. Les mentions légales ne reproduisent plus
+l’attestation d’assurance, dont la validité doit être suivie séparément.
 
 ## Crédit d'impôt et coopération ACCÈS SAP
 

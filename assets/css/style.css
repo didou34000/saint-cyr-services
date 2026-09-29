@@ -588,6 +588,7 @@ p:last-child { margin-bottom: 0; }
 
 .shot {
   position: relative;
+  align-self: start;
   margin: 0;
   border-radius: var(--radius);
   overflow: hidden;
@@ -603,6 +604,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .shot img {
+  display: block;
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
@@ -675,7 +677,7 @@ p:last-child { margin-bottom: 0; }
 
 .split {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: clamp(2rem, 1rem + 4vw, 4.5rem);
   align-items: center;
 }
