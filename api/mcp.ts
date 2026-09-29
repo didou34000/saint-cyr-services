@@ -556,7 +556,37 @@ async function handleRequest(request: Request): Promise<Response> {
   }
 }
 
-export const GET = handleRequest;
-export const POST = handleRequest;
-export const DELETE = handleRequest;
-export const OPTIONS = handleRequest;
+export default async function handler(req: any, res: any) {
+  const protocol = String(req.headers?.["x-forwarded-proto"] || "https");
+  const host = String(req.headers?.host || "saint-cyr-services.vercel.app");
+  const url = new URL(req.url || "/api/mcp", `${protocol}://${host}`);
+
+  const headers = new Headers();
+  for (const [key, value] of Object.entries(req.headers || {})) {
+    if (Array.isArray(value)) {
+      for (const item of value) headers.append(key, String(item));
+    } else if (value !== undefined) {
+      headers.set(key, String(value));
+    }
+  }
+
+  let body: BodyInit | undefined;
+  if (!["GET", "HEAD"].includes(String(req.method || "GET").toUpperCase())) {
+    if (typeof req.body === "string") body = req.body;
+    else if (Buffer.isBuffer(req.body)) body = req.body;
+    else if (req.body !== undefined && req.body !== null) body = JSON.stringify(req.body);
+  }
+
+  const request = new Request(url, {
+    method: req.method || "POST",
+    headers,
+    body,
+  });
+
+  const response = await handleRequest(request);
+  response.headers.forEach((value, key) => res.setHeader(key, value));
+  res.status(response.status);
+
+  const bytes = Buffer.from(await response.arrayBuffer());
+  return res.send(bytes);
+}
