@@ -6,4 +6,4 @@ Allow: /
 # À supprimer du serveur plutôt qu'à masquer, si possible.
 Disallow: /photos/
 
-Sitemap: https://saint-cyr-services.vercel.app/sitemap.xml
+Sitemap: https://www.saint-cyr-services.fr/sitemap.xml

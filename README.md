@@ -6,14 +6,13 @@ et s'héberge n'importe où.
 
 ## Points à finaliser
 
-Le site est public à https://saint-cyr-services.vercel.app/. Les informations déjà
+Le site est public à https://www.saint-cyr-services.fr/. Les informations déjà
 transmises par l'entreprise ont été intégrées. Les points suivants restent à confirmer.
 
 | Où | Quoi | Fichier |
 |---|---|---|
 | Mentions légales | **Médiateur de la consommation** pour les prestations hors ACCÈS SAP — le client doit y adhérer | `mentions-legales.html`, rubrique « Médiation de la consommation » |
 | Contact | **Jours et horaires d'appel** — la fiche Google indique une fermeture à 19 h, le détail par jour reste à recopier | `index.html` (carte Téléphone) |
-| Partout | **Nom de domaine personnalisé** — enregistrer `saint-cyr-services.fr` au nom de l'entreprise, le relier à Vercel, puis remplacer les URL Vercel | les 8 `canonical`, `og:url`, `og:image`, les JSON-LD, `sitemap.xml`, `robots.txt` |
 
 Le numéro **06 68 05 33 81** est utilisé partout, en lien cliquable (`tel:`) et en lien
 WhatsApp (`wa.me/33668053381`). L’adresse, l’e-mail et le SIRET ont été repris des
@@ -76,7 +75,7 @@ prestations/                   une page par prestation
   piscine-terrasses.html
   entretien-jardin.html
 mentions-legales.html
-robots.txt  sitemap.xml        référencement (à mettre à jour avec le vrai domaine)
+robots.txt  sitemap.xml        référencement sur www.saint-cyr-services.fr
 assets/css/style.css           toute la mise en forme, dans un seul fichier
 assets/js/main.js              menu mobile, apparition au scroll, visionneuse photo
 assets/img/                    photos converties en WebP, deux tailles
