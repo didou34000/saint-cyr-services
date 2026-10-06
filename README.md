@@ -175,24 +175,44 @@ Pour changer toute la palette, modifier le bloc `:root` en haut de `assets/css/s
 ## Les avis clients
 
 Les avis affichés sur la page d'accueil sont **recopiés mot pour mot depuis la fiche Google
-« SAINT CYR SERVICES »** (5,0 sur 5, 4 avis) : Damien Arnaud et Trésors de couture. Les deux
-autres avis sont des notes sans commentaire, ils ne sont donc pas affichés.
+« SAINT CYR SERVICES »** : Damien Arnaud et Trésors de couture. Ce sont les extraits
+recueillis lors de la création du site, et non un flux actualisé automatiquement.
+Le lien de la fiche transmis par le client permet de consulter les avis actuels.
+La note globale et le nombre total ne sont plus affichés pour éviter une information périmée.
 
 Ne rien reformuler : ce sont les mots des clients. Pour en ajouter un, dupliquer le bloc
 `<figure class="avis__carte">` dans `index.html` et recopier le texte tel quel.
 
 La note globale n'est volontairement **pas** déclarée en `aggregateRating` dans les données
-structurées : Google interdit de baliser sur son propre site des avis collectés sur une
-plateforme tierce. Elle est affichée en texte, ce qui est autorisé.
+structurées : pour une entreprise locale, les avis sur sa propre entreprise ne sont
+pas éligibles aux étoiles des résultats enrichis Google, même issus d'une plateforme tierce.
 
 ## À faire sur la fiche Google
 
-La fiche « SAINT CYR SERVICES » n'a **aucun site web renseigné** (elle affiche encore
-« Ajouter un site Web »). Dès que le nom de domaine définitif est en place, l'ajouter à la
-fiche : c'est le geste qui rapporte le plus en référencement local, et il prend deux minutes.
+Vérifier dans la fiche existante « SAINT CYR SERVICES » que le champ Site Web contient
+`https://www.saint-cyr-services.fr/`. Ne pas créer une deuxième fiche. L'état actuel
+des réglages n'a pas pu être vérifié dans l'administration Google lors de l'audit SEO.
 
 Les horaires réels figurent sur la fiche (fermeture à 19 h). Ils n'ont pas été recopiés sur le
 site faute de connaître le détail jour par jour.
+
+## Référencement naturel
+
+Le plan, les observations et les étapes nécessitant un accès Google figurent dans
+[docs/seo-plan.md](docs/seo-plan.md). Les pages utilisent les URL canoniques sans
+extension, des métadonnées uniques et une identité locale cohérente en JSON-LD.
+Les dates du sitemap doivent refléter de vraies modifications des pages, pas chaque déploiement.
+
+Contrôles reproductibles, sans installation de dépendances pour la partie statique :
+
+```powershell
+node scripts/check-seo.cjs
+node scripts/check-seo.cjs --live
+node scripts/check-seo.cjs --browser
+```
+
+Le dernier contrôle requiert Playwright et Chrome (le runtime Codex inclut Playwright).
+Les captures de contrôle sont locales, dans `artifacts/`, et ne sont pas déployées.
 
 ## Choix techniques
 

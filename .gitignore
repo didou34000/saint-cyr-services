@@ -9,4 +9,5 @@ photos/
 .claude/
 .vercel/
 node_modules/
+artifacts/
 .vercel

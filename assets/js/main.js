@@ -50,6 +50,7 @@
       }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
 
       reveals.forEach(function (el, i) {
+        el.setAttribute('data-reveal-ready', '');
         el.style.transitionDelay = (i % 3) * 90 + 'ms';
         io.observe(el);
       });
