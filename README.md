@@ -209,9 +209,11 @@ Contrôles reproductibles, sans installation de dépendances pour la partie stat
 node scripts/check-seo.cjs
 node scripts/check-seo.cjs --live
 node scripts/check-seo.cjs --browser
+node scripts/check-seo.cjs --browser --live
 ```
 
-Le dernier contrôle requiert Playwright et Chrome (le runtime Codex inclut Playwright).
+Les contrôles navigateur requièrent Playwright et Chrome (le runtime Codex inclut Playwright).
+Avec `--browser --live`, ils portent sur le domaine public, pas seulement sur la copie locale.
 Les captures de contrôle sont locales, dans `artifacts/`, et ne sont pas déployées.
 
 ## Choix techniques

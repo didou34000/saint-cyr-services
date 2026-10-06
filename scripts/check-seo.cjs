@@ -116,7 +116,7 @@ async function browserChecks() {
     fs.createReadStream(file).pipe(res);
   });
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
-  const origin = `http://127.0.0.1:${server.address().port}`;
+  const origin = process.argv.includes('--live') ? canonicalBase : `http://127.0.0.1:${server.address().port}`;
   let browser;
   try {
     browser = await playwright.chromium.launch({ channel: 'chrome', headless: true });

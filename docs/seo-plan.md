@@ -92,14 +92,14 @@ d'appels ou les positions dans Google Maps ; elle ne prédit pas une première p
 | P1 | Vérifier l'accès HTTP, l'indexabilité et les canoniques | Permettre une exploration cohérente | 10–15 min | 8 pages, robots, sitemap | Contrôle initial réalisé |
 | P1 | Titres/descriptions uniques, prestation + Montpellier | Clarifier l'intention et les extraits de recherche | 15–25 min | 6 prestations, description accueil | Appliqué |
 | P1 | Harmoniser l'entreprise avec adresse, téléphone et e-mail confirmés | Compréhension de l'entité locale | 15–25 min | JSON-LD des 7 pages commerciales, pied de page | Appliqué |
-| P1 | Liens internes directs et redirection de l'ancien hôte public Vercel | Réduire les variantes d'URL et les redirections inutiles | 10–15 min | 8 pages, vercel.json | Appliqué ; à vérifier en production |
+| P1 | Liens internes directs et redirection de l'ancien hôte public Vercel | Réduire les variantes d'URL et les redirections inutiles | 10–15 min | 8 pages, vercel.json | Appliqué et vérifié en production |
 | P1 | Configurer Search Console et soumettre le sitemap | Mesurer exploration, indexation et requêtes | 15–30 min hors attente Google | Compte Google et éventuellement DNS OVH | Accès/validation nécessaires |
 | P1 | Vérifier le site web et l'identité sur la fiche Google existante | Cohérence locale et accès au site | 15–30 min | Google Business Profile | Accès de gestion nécessaire |
 | P2 | Secteur visible et liens contextuels vers entretien/taille | Répondre aux visiteurs locaux et aider la navigation | 10 min | Contact de l'accueil | Appliqué |
 | P2 | Ajouter WebSite et fils d'Ariane structurés conformes au contenu | Aider la compréhension du site | 10–15 min | Accueil et 6 prestations | Appliqué |
 | P2 | Enlever le total d'avis figé et renvoyer à la fiche fournie | Éviter une preuve sociale périmée | 5 min | Avis accueil | Appliqué, citations conservées |
 | P2 | Mettre à jour le sitemap avec des dates réelles | Communiquer les URL préférées et modifications | 5 min | sitemap.xml | Appliqué ; champs priority/changefreq retirés car ignorés par Google |
-| P2 | Tester l'affichage et les interactions puis publier | Prévenir les régressions | 20–30 min | 8 pages, 4 largeurs | Tests locaux réussis ; publication en cours |
+| P2 | Tester l'affichage et les interactions puis publier | Prévenir les régressions | 20–30 min | 8 pages, 4 largeurs | Tests locaux réussis, publié et contrôlé en HTTP |
 | P2 | Rendre les cartes visibles lorsque JavaScript ne démarre pas | Robustesse et accès au contenu | 5 min | CSS/JS communs | Appliqué |
 | P3 | Enrichir progressivement avec des chantiers documentés | Preuves de travail originales, utiles aux clients | 20–40 min par chantier | Réalisations et prestations concernées | Plus tard, avec photos/détails autorisés |
 
@@ -207,5 +207,24 @@ Contrôles locaux du 6 octobre 2026 :
 - Liens téléphone, WhatsApp et e-mail vérifiés sans contact réel avec des tiers.
 - `git diff --check` : aucune erreur d'espacement.
 
-La vérification de la nouvelle version en production sera ajoutée après le déploiement.
+Vérification en production du 6 octobre 2026 :
+
+- URL : https://www.saint-cyr-services.fr/.
+- Cible : production ; statut Vercel **READY** ; version fonctionnelle `41bfe8a` sur `main`.
+- Projet : `saint-cyr-services`, équipe `dorians-projects-cce58770` ; framework : HTML statique.
+- Déploiement : `dpl_5uVdjFGriPU3VBMkAyvB4khb3zt5`, construction environ 3,4 secondes
+  d'après les horodatages Vercel. L'alias officiel est bien affecté à ce déploiement.
+- `node scripts/check-seo.cjs --live` : réussite. Les 8 pages publiques correspondent
+  à la version locale, les 52 ressources répondent, le sitemap est à jour et aucun
+  en-tête `X-Robots-Tag: noindex` ne bloque les pages.
+- `node scripts/check-seo.cjs --browser --live` : réussite, les mêmes 32 vues
+  et interactions contrôlées sur le site réellement publié, dans Chrome headless.
+  Ce n'est pas une certification de tous les navigateurs ou téléphones possibles.
+- Les variantes testées sans www, l'ancien hôte Vercel et les chemins `.html`
+  redirigent de façon permanente vers les URL préférées.
+- L'URL inexistante, `empreinte.py`, le plan et le script de test répondent 404 :
+  les documents de travail ne sont pas exposés par le déploiement.
+- Observabilité : aucun problème HTTP détecté dans ces contrôles. Journaux runtime,
+  drains et suivi continu non audités ; aucun service payant ou traceur ajouté.
+
 Ces contrôles portent sur des scénarios précis, pas sur une garantie d'absence totale de bugs.
