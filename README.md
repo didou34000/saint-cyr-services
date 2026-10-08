@@ -75,6 +75,8 @@ prestations/                   une page par prestation
   piscine-terrasses.html
   entretien-jardin.html
 mentions-legales.html
+conseils/
+  preparer-devis-entretien-jardin.html  guide pratique pour préparer une demande
 robots.txt  sitemap.xml        référencement sur www.saint-cyr-services.fr
 assets/css/style.css           toute la mise en forme, dans un seul fichier
 assets/js/main.js              menu mobile, apparition au scroll, visionneuse photo
@@ -127,7 +129,7 @@ python3 empreinte.py
 ```
 
 Le script recalcule une empreinte du contenu de `style.css` et `main.js` et l'ajoute aux liens
-des 8 pages (`style.css?v=92cf1b4a`). Tant que le fichier ne bouge pas, l'empreinte ne bouge
+de toutes les pages, y compris les conseils (`style.css?v=92cf1b4a`). Tant que le fichier ne bouge pas, l'empreinte ne bouge
 pas et le navigateur garde sa version en cache. Dès qu'il change, l'URL change et le navigateur
 recharge tout seul.
 
@@ -188,6 +190,11 @@ structurées : pour une entreprise locale, les avis sur sa propre entreprise ne 
 pas éligibles aux étoiles des résultats enrichis Google, même issus d'une plateforme tierce.
 
 ## À faire sur la fiche Google
+
+Au 8 octobre 2026, récupération de l'ancienne fiche et traitement d'un doublon en
+attente auprès de Google. Ne pas créer une autre fiche, supprimer la fiche historique
+ou diffuser un QR code d'avis avant identification de la fiche à conserver. Les actions
+suivantes s'appliqueront une fois l'accès rétabli.
 
 Vérifier dans la fiche existante « SAINT CYR SERVICES » que le champ Site Web contient
 `https://www.saint-cyr-services.fr/`. Ne pas créer une deuxième fiche. L'état actuel

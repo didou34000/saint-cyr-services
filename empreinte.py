@@ -21,7 +21,9 @@ CIBLES = {
 
 
 def empreinte(chemin: pathlib.Path) -> str:
-    return hashlib.sha256(chemin.read_bytes()).hexdigest()[:8]
+    # Une même version doit garder son empreinte après un checkout Windows/Linux.
+    contenu = chemin.read_text(encoding="utf-8").replace("\r\n", "\n")
+    return hashlib.sha256(contenu.encode("utf-8")).hexdigest()[:8]
 
 
 def main() -> None:
@@ -31,6 +33,7 @@ def main() -> None:
 
     pages = [RACINE / "index.html", RACINE / "mentions-legales.html"]
     pages += sorted((RACINE / "prestations").glob("*.html"))
+    pages += sorted((RACINE / "conseils").glob("*.html"))
 
     modifiees = 0
     for page in pages:

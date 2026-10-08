@@ -93,7 +93,7 @@ d'appels ou les positions dans Google Maps ; elle ne prédit pas une première p
 | P1 | Titres/descriptions uniques, prestation + Montpellier | Clarifier l'intention et les extraits de recherche | 15–25 min | 6 prestations, description accueil | Appliqué |
 | P1 | Harmoniser l'entreprise avec adresse, téléphone et e-mail confirmés | Compréhension de l'entité locale | 15–25 min | JSON-LD des 7 pages commerciales, pied de page | Appliqué |
 | P1 | Liens internes directs et redirection de l'ancien hôte public Vercel | Réduire les variantes d'URL et les redirections inutiles | 10–15 min | 8 pages, vercel.json | Appliqué et vérifié en production |
-| P1 | Configurer Search Console et soumettre le sitemap | Mesurer exploration, indexation et requêtes | 15–30 min hors attente Google | Compte Google et éventuellement DNS OVH | Accès/validation nécessaires |
+| P1 | Configurer Search Console et soumettre le sitemap | Mesurer exploration, indexation et requêtes | 15–30 min hors attente Google | Compte Google et DNS OVH | Réalisé ; sitemap traité, 8 URL découvertes (contrôle du 8 octobre 2026) |
 | P1 | Vérifier le site web et l'identité sur la fiche Google existante | Cohérence locale et accès au site | 15–30 min | Google Business Profile | Accès de gestion nécessaire |
 | P2 | Secteur visible et liens contextuels vers entretien/taille | Répondre aux visiteurs locaux et aider la navigation | 10 min | Contact de l'accueil | Appliqué |
 | P2 | Ajouter WebSite et fils d'Ariane structurés conformes au contenu | Aider la compréhension du site | 10–15 min | Accueil et 6 prestations | Appliqué |
@@ -109,9 +109,15 @@ ou d'outils de suivi sans besoin. Pas de FAQPage dans l'espoir d'un résultat
 enrichi pour ce paysagiste ; la FAQ reste un contenu utile aux visiteurs.
 Les données structurées ne garantissent pas un affichage enrichi.
 
-## 4. Étapes Google restantes, pas à pas
+## 4. Configuration Google et prochaines étapes
 
 ### Search Console
+
+Configuration effectuée sur le compte Google de Saint-Cyr : propriété Domaine
+`saint-cyr-services.fr` validée par TXT DNS chez OVH. Le sitemap est traité avec
+succès et ses huit URL sont découvertes. Les demandes d'indexation de l'accueil
+et de la page entretien ont été acceptées. Cela ne confirme pas encore leur
+indexation effective ni un classement. Procédure utilisée et accès recommandé :
 
 1. Avec un compte Google autorisé pour l'entreprise, ouvrir
    [Google Search Console](https://search.google.com/search-console).
@@ -132,6 +138,14 @@ Les données structurées ne garantissent pas un affichage enrichi.
 
 ### Google Business Profile
 
+**État au 8 octobre 2026 :** l'ancienne fiche est gérée par un tiers inaccessible,
+et une nouvelle fiche existe. Le dossier de récupération et de doublon est ouvert
+dans la communauté. L'utilisateur a répondu à l'expert pour signaler que le parcours
+officiel d'assistance ne propose toujours que la communauté, y compris après essai
+avec le compte du client. Aucune fusion, suppression ni attribution d'accès n'a été
+effectuée. Résoudre cette situation avant d'appliquer la liste ci-dessous et de
+diffuser un QR code d'avis pour la fiche définitive.
+
 1. Rechercher la fiche **existante** SAINT CYR SERVICES avec le compte qui la gère.
    Ne pas passer par « Ajouter un établissement » si la fiche existe déjà.
 2. Dans les paramètres de la fiche, Personnes et accès, inviter le compte Google
@@ -149,8 +163,10 @@ Les données structurées ne garantissent pas un affichage enrichi.
    fourni par le client ouvre la fiche, mais n'est pas vérifié comme lien direct d'avis.
    Inviter les clients réels sans cadeau, achat d'avis ni filtrage des clients mécontents.
 
-Ces actions n'ont pas été effectuées pendant les modifications du code : aucune
-validation Search Console, aucun paramètre Google et aucun avis n'est prétendu créé.
+La configuration Search Console a été réalisée après les modifications du code,
+avec l'autorisation de l'utilisateur. Aucun accès de prestataire supplémentaire
+n'a été accordé. La fiche Google Business Profile reste un chantier distinct :
+aucun paramètre de fiche ni avis n'a été modifié dans cette configuration.
 
 ## 5. Mesure et suivi
 
@@ -170,7 +186,7 @@ Comparer après environ 4 semaines, puis 8–12 semaines, des périodes comparab
 en tenant compte de la saisonnalité. Ces dates sont des rendez-vous de mesure,
 pas des promesses de hausse. Vérifier rapidement les erreurs d'exploration nouvelles.
 
-Non mesuré à ce stade : Search Console, Analytics, conversions réelles, backlinks,
+Non mesuré à ce stade : historique de performances Search Console, Analytics, conversions réelles, backlinks,
 classement local géolocalisé et Core Web Vitals de vrais visiteurs. Les tests de
 mise en page ne constituent pas une mesure de LCP/INP/CLS en production.
 Un contrôle [PageSpeed Insights](https://pagespeed.web.dev/) peut compléter la
@@ -228,3 +244,44 @@ Vérification en production du 6 octobre 2026 :
   drains et suivi continu non audités ; aucun service payant ou traceur ajouté.
 
 Ces contrôles portent sur des scénarios précis, pas sur une garantie d'absence totale de bugs.
+
+Configuration Search Console du 7 octobre, contrôlée le 8 octobre 2026 :
+
+- Propriété Domaine `saint-cyr-services.fr` validée sur le compte Google du client.
+- Un seul TXT Google ajouté à la racine chez OVH après confirmation explicite.
+  Sa présence a été vérifiée sur les deux serveurs DNS OVH et les résolveurs publics
+  Google et Cloudflare. Conserver cet enregistrement pour garder la validation.
+- Enregistrements A, CNAME www, MX, NS et TXT/SPF préexistants conservés ;
+  le site répond toujours en HTTP 200.
+- `https://www.saint-cyr-services.fr/sitemap.xml` envoyé. L'erreur initiale
+  « Impossible de récupérer le sitemap » a disparu : le rapport affiche désormais
+  **Opération effectuée**, type Sitemap, **8 pages découvertes**, aucune vidéo.
+- Le test en ligne de Search Console a également confirmé l'accès de Google au sitemap.
+- L'accueil et `/prestations/entretien-jardin` ont été inspectés ; Google a confirmé
+  **Indexation demandée** pour les deux URL. Aucune demande répétée n'est nécessaire.
+  Huit URL découvertes dans le sitemap ne signifie pas huit pages déjà indexées.
+- Vérification HTTP indépendante : sitemap XML valide avec huit URL uniques,
+  toutes accessibles ; robots.txt autorise leur exploration. Aucun problème
+  technique nécessitant une modification du site n'a été observé dans ces contrôles.
+- Prochaine étape : consulter les rapports d'indexation et de performances lorsque
+  les données Google sont disponibles. Aucun suivi automatique n'a été programmé.
+
+### Complément du 8 octobre 2026, soirée
+
+- L'inspection individuelle dans Search Console confirme désormais **« Cette URL
+  est sur Google »** pour l'accueil et `/prestations/entretien-jardin`. Le fil
+  d'Ariane de l'entretien est valide. Les rapports globaux Indexation et Performances
+  sont encore en traitement : aucun nombre total de pages indexées, de clics ou
+  d'impressions ne peut être déduit de ces deux inspections.
+- PageSpeed Insights Google, mobile simulé : accueil 99/100, entretien 99/100 en
+  performances ; contrôles automatiques accessibilité, bonnes pratiques et SEO
+  à 100/100. Accueil desktop : 100/100 dans les quatre catégories. Absence de données
+  terrain CrUX. Mesures de laboratoire, pas un score de positionnement Google.
+- Ajout d'un guide pratique `/conseils/preparer-devis-entretien-jardin`, relié à
+  l'accueil, à l'entretien et aux pieds de page. Le site passe à neuf URL dans son
+  sitemap ; la découverte de neuf URL par Google devra être constatée séparément.
+- Images principales des six prestations rendues adaptatives avec leurs variantes
+  WebP existantes. Pas de création d'images ni de cas clients fictifs.
+- Correction du menu mobile : les liens fermés ne captent plus le clavier hors
+  écran, et les liens restent utilisables sans JavaScript.
+- Détails, mesures, publication et limites : [bilan du 8 octobre](seo-2026-10-08.md).

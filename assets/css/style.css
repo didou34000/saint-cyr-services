@@ -339,11 +339,18 @@ p:last-child { margin-bottom: 0; }
     background: var(--stone);
     border-bottom: 1px solid var(--line);
     transform: translateY(-120%);
+    /* Le déplacement seul laisse les liens hors écran dans le parcours clavier. */
+    visibility: hidden;
+    pointer-events: none;
     transition: transform .28s ease;
     max-height: calc(100dvh - 72px);
     overflow-y: auto;
   }
-  .nav[data-open="true"] { transform: translateY(0); }
+  .nav[data-open="true"] {
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
 
   .nav a {
     padding: .95rem 0;
@@ -354,6 +361,24 @@ p:last-child { margin-bottom: 0; }
   .nav a[aria-current="page"] { border-color: var(--vert); }
 
   .nav > .btn { display: inline-flex; margin-top: 1rem; }
+}
+
+/* Sans JavaScript, les liens restent utilisables sans bouton inactif ni panneau
+   fixe. Cette règle ne modifie pas le rendu lorsque les scripts sont actifs. */
+@media (max-width: 900px) and (scripting: none) {
+  .site-header { position: static; }
+  .site-header__inner { flex-wrap: wrap; gap: .5rem; padding-block: .8rem; }
+  .nav-toggle { display: none; }
+  .nav {
+    position: static;
+    flex-basis: 100%;
+    max-height: none;
+    padding: 0;
+    border-bottom: 0;
+    transform: none;
+    visibility: visible;
+    pointer-events: auto;
+  }
 }
 
 /* --- 5. Hero ------------------------------------------------------------ */
