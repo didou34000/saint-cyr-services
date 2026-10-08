@@ -284,4 +284,9 @@ Configuration Search Console du 7 octobre, contrôlée le 8 octobre 2026 :
   WebP existantes. Pas de création d'images ni de cas clients fictifs.
 - Correction du menu mobile : les liens fermés ne captent plus le clavier hors
   écran, et les liens restent utilisables sans JavaScript.
+- Publication du commit `4366abf` confirmée, puis contrôles des neuf pages en
+  production aux quatre largeurs validés. Google a accepté la demande d'indexation
+  du nouveau guide et le renvoi du sitemap actualisé ; la nouvelle URL n'est pas
+  encore confirmée comme indexée. PageSpeed du guide : 97/100 mobile et 100/100
+  desktop en performances, 100/100 pour les contrôles SEO automatiques.
 - Détails, mesures, publication et limites : [bilan du 8 octobre](seo-2026-10-08.md).
