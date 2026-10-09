@@ -1,0 +1,12 @@
+{
+  "name": "saint-cyr-services",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.0.0",
+    "mcp-handler": "^2.2.0",
+    "zod": "^4.2.0"
+  }
+}
